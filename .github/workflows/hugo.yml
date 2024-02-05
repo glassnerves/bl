@@ -32,9 +32,8 @@ jobs:
       - name: clone
         shell: pwsh
         run: |
-          gem install asciidoctor -V &&
           $env:ASCIIDOCTORCSSPATH = "C:\hostedtoolcache\windows\Ruby\3.0.6\x64\lib\ruby\gems\3.0.0\gems\asciidoctor-2.0.20\data\stylesheets\asciidoctor-default.css"
-          echo "ASCIIDOCTORCSSPATH=$env:ASCIIDOCTORCSSPATH" >> $GITHUB_ENV	&& git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ./emilua.exe blog-machine/main.lua
+          echo "ASCIIDOCTORCSSPATH=$env:ASCIIDOCTORCSSPATH" >> $GITHUB_ENV	&& gem install asciidoctor -V && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ./emilua.exe blog-machine/main.lua
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
