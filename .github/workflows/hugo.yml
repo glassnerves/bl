@@ -37,7 +37,7 @@ jobs:
       - name: env asciidoctor
         shell: pwsh
         run: |
-          echo C:\hostedtoolcache\windows\Ruby\3.0.6\x64\lib\ruby\gems\3.0.0\gems\asciidoctor-2.0.20\data\stylesheets" | Out-File -FilePath $env:ASCIIDOCTORCSSPATH -Encoding utf8 -Append && ./emilua.exe blog-machine/main.lua
+          echo "C:\hostedtoolcache\windows\Ruby\3.0.6\x64\lib\ruby\gems\3.0.0\gems\asciidoctor-2.0.20\data\stylesheets" | Out-File -FilePath $env:ASCIIDOCTORCSSPATH -Encoding utf8 -Append && ./emilua.exe blog-machine/main.lua
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
