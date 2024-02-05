@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: git wine wine32 wget dpkg  && apt-get update
+          packages: git wine wine32 wget
           version: 1.0
       - name: clone
         run: git clone https://gitlab.com/emilua/blog-machine.git && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Fboost_nowide-vc143-mt-x64-1_83.dll" && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Femilua.exe" && mv build%2Fboost_nowide-vc143-mt-x64-1_83.dll boost_nowide-vc143-mt-x64-1_83.dll && mv build%2Femilua.exe emilua.exe
