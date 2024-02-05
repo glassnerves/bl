@@ -30,7 +30,7 @@ jobs:
       - name: Install asciidoctor
         run:  choco install wget unzip ruby
       - name: clone
-        run: gem install asciidoctor && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ls C:\tools\ruby33 && dir "asciidoctor-default*" /s
+        run: gem install asciidoctor && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ls C:\tools\ruby33 && ls C:\tools\ruby33\share && ls C:\tools\ruby33\lib && ls C:\tools\ruby33\packages && dir "asciidoctor-default*" /s C:
  
       - name: Setup Pages
         id: pages
