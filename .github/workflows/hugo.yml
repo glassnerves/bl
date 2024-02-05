@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install emilua
-        run: sudo apt update && --add-architecture i386 && apt sudo apt update
+        run: sudo apt update && sudo dpkg --add-architecture i386 && apt sudo apt update
       - uses: actions/checkout@v2
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
