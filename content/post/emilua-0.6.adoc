@@ -1,0 +1,32 @@
+= Emilua 0.6 released
+:revdate: 2024-01-07
+
+This time the requirement for versions of the dependencies were increased. This
+allowed many bugfixes that wouldn't be possible otherwise.
+
+Other than that, here are the main changes of this release:
+
+* Add support for retrieving peer credentials in UNIX sockets.
+* Add support for retrieving peer security labels (SELinux and TrustedBSD's
+  MAC) in UNIX sockets.
+* Add support for FreeBSD's jails.
+* Add function `format()` to format strings. The implementation uses
+  https://fmt.dev/[{cpp}'s libfmt].
+* Many improvements to Windows version of `system.spawn()`.
+* Remove HTTP & WebSocket classes. They should be offered as separate plugins.
+* Many changes to the module filesystem. See the full changelog in the docs.
+
+Emilua now sits in a very interesting spot for sandboxing experimentation. It
+supports:
+
+* Linux Landlock.
+* Linux namespaces.
+* FreeBSD Capsicum.
+* FreeBSD jails.
+
+I'm not aware of any framework that exposes an actor API focused on sandboxing
+such as Emilua.
+
+However there's a bug in Boost.Asio that prevents full use of its sandboxing
+capabilities under FreeBSD. I'll be tackling this issue with Boost.Asio
+developers in the coming weeks.

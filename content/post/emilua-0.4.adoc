@@ -1,0 +1,46 @@
+= Emilua 0.4 released
+:revdate: 2023-04-03
+
+Emilua 0.4 released after over a year of work. A few highlights:
+
+* A new byte_span type akin to Go slices is used for IO ops.
+
+* Many new IO ops to list here (TCP, UDP, TLS, file IO, address/service
+  forward/reverse name resolution, UNIX domain sockets, SCM_RIGHTS-style
+  fd-passing, pipes, serial ports, ...).
+
+* A new module for filesystem operations.
+
+* Improved support for system clocks (absolute timeouts to avoid accumulating
+  jitter, high resolution clocks to implement microbenchmarkings, ...).
+
+* A new AWK-inspired scanner for formatted (buffered implied) textual input. It
+  should be easy to parse a lot of streaming textual protocols with that
+  (e.g. HTTP, SMTP, redis, Gopher, Gemini, ...) and even classical UNIX files
+  (e.g. /etc/group, /etc/passwd, /etc/fstab, ...).
+
+* Docs can be installed as manpages, downloaded as PDF/ePUB, or viewed online in
+  the new website.
+
+* New interfaces to handle UNIX signals, CLI args, env vars, and process
+  credentials.
+
+* New interfaces to handle process & job control (+ ptys).
+
+* io_uring support.
+
+* Linux namespaces support (you can optionally run a Lua VM inside some
+  namespace for practical & cheap sandboxing purposes). Next versions should
+  improve this support and bring FreeBSD's Capsicum and Linux's Landlock to the
+  table as well.
+
+* Improved Windows support (you can even use a few platform-specific APIs such
+  as TransmitFile()).
+
+* New module for common stream operations.
+
+* Experimental WebSocket support (API will most likely change in future
+  releases). And going further forward I should just split HTTP+WS out of Emilua
+  core into their own separate plugin (and separate release schedules).
+
+* A basic regex module.

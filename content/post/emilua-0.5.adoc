@@ -1,0 +1,42 @@
+= Emilua 0.5 released
+:revdate: 2023-12-04
+
+The focus of this version was to refactor the internals so it becomes feasible
+to create single-binary applications in the future. Refactoring is a boring task
+and it doesn't bring many user-visible changes, but it pays in the long run.
+
+Even if the majority of the work went into the internals, this release also
+managed to sneak in a couple of big features:
+
+* Support for Linux's Landlock.
+* Support for FreeBSD's Capsicum.
+
+Linux namespaces proved to be too cumbersome to use, so this release introduces
+these new sandboxing technologies for compartmentalised application development.
+
+This release also dropped support for NetBSD, DragonFly BSD, and OpenBSD. These
+systems just don't have practical APIs for the userspace developer anymore. The
+only system from the BSD family that has been keeping itself up-to-date to
+developer needs has been FreeBSD. Once other BSDs improve their pace, the
+support for them will be restored.
+
+A focus of the future releases will be the creation of a package manager that
+eases Lua development. Trying to use GUIX as the package manager for Lua
+programs proved to be a failed experiment (we'll still release Emilua packages
+for GUIX in the foreseeable nonetheless).
+
+Since its last release, Emilua has been packaged for many more Linux
+distros. Including distros that were already packaging it, now we have:
+
+* GUIX.
+* NixOS.
+* ArchLinux's AUR.
+* Ubuntu's PPAs.
+* FreeBSD (main pkg repository and ports).
+
+https://gitlab.com/emilua/emilua/-/packages/20797335[As usual, you may find
+up-to-date Windows binaries generated from AppVeyor CI in the Gitlab package
+registry].
+
+https://docs.emilua.org/api/0.5/changelog.html[You may find the full changelog
+in the documentation].
