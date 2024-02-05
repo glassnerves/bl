@@ -39,7 +39,7 @@ jobs:
           packages: git wine wget winetricks
           version: 1.0
       - name: clone
-        run: git clone https://gitlab.com/emilua/blog-machine.git && winetricks -q vcrun2015 && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Fboost_nowide-vc143-mt-x64-1_83.dll" && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Femilua.exe" && mv build%2Fboost_nowide-vc143-mt-x64-1_83.dll boost_nowide-vc143-mt-x64-1_83.dll && mv build%2Femilua.exe emilua.exe
+        run: git clone https://gitlab.com/emilua/blog-machine.git && WINEARCH=win32 winetricks -q dotnet35 && winetricks -q vcrun2015 && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Fboost_nowide-vc143-mt-x64-1_83.dll" && wget -c "https://ci.appveyor.com/api/buildjobs/9apnn00sbd19yjrh/artifacts/build%2Femilua.exe" && mv build%2Fboost_nowide-vc143-mt-x64-1_83.dll boost_nowide-vc143-mt-x64-1_83.dll && mv build%2Femilua.exe emilua.exe
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
