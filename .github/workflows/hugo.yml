@@ -31,7 +31,6 @@ jobs:
         run:  choco install wget unzip ruby
       - name: clone
         run: gem install asciidoctor -V && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && gci -Recurse -Filter "asciidoctor-default.css" -File -ErrorAction SilentlyContinue -Path "C:\"
-        uses: actions/configure-pages@v4
       - name: env asciidoctor
           # For maximum backward compatibility with Hugo modules
           ASCIIDOCTORCSSPATH: /usr/share/ruby-asciidoctor/stylesheets/asciidoctor-default.css
