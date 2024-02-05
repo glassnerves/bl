@@ -30,14 +30,13 @@ jobs:
       - name: Install asciidoctor
         run:  choco install wget unzip ruby
       - name: clone
-        run: gem install asciidoctor -V && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && gci -Recurse -Filter "asciidoctor-default.css" -File -ErrorAction SilentlyContinue -Path "C:\"
-      - name: Setup Pages
+        run: gem install asciidoctor -V && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip
         id: pages
         uses: actions/configure-pages@v4
       - name: env asciidoctor
         env:
           # For maximum backward compatibility with Hugo modules
-          ASCIIDOCTORCSSPATH: C:/tools/ruby33/lib/ruby/gems/2.6.0/gems/ 
+          echo "C:\hostedtoolcache\windows\Ruby\3.0.6\x64\lib\ruby\gems\3.0.0\gems\asciidoctor-2.0.20\data\stylesheets\asciidoctor-default.css" > $ASCIIDOCTORCSSPATH 
         run: ./emilua.exe blog-machine/main.lua        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
