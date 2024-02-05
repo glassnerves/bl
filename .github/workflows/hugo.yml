@@ -28,14 +28,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install asciidoctor
-        run:  choco install vcredist140 git wget unzip ruby
+        run:  choco install wget unzip ruby
       - name: clone
-        run: gem install asciidoctor && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip
+        run: gem install asciidoctor && git clone https://gitlab.com/emilua/blog-machine.git && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && emilua.exe blog-machine/main.lua
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: env asciidoctor
-        run: emilua.exe blog-machine/main.lua
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
