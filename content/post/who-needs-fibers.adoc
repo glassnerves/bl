@@ -5,7 +5,6 @@
 :_:
 :imagesdir: /
 
-
 [ditaa,md_subs,title="The gateway subscription model"]
 ....
 +--------------+
@@ -24,11 +23,32 @@
 +--------------+
 ....
 
-[syntrax]
-...
-indentstack(10,
-  line(opt('-'), choice('0', line('1-9', loop(None, '0-9'))),
-    opt('.', loop('0-9', None))),
-  line(opt(choice('e', 'E'), choice(None, '+', '-'), loop('0-9', None)))
-)
-...
+[syntrax,hyperlinked,svg,opts=interactive]
+....
+jsyntrax(stack(
+ line('attribute', '/(attribute) identifier', 'of'),
+ line(choice(toploop('/entity_designator', ','), 'others', 'all'), ':'),
+ line('/entity_class', 'is', '/expression', ';')
+),
+[
+  'entity_class': 'https://www.google.com/#q=vhdl+entity+class',
+  '(attribute) identifier': 'http://en.wikipedia.com/wiki/VHDL'
+])
+....
+
+The execution engine will not crash. The only thing that will happen is a normal
+Lua error being raised to the appropriate fiber call-stack.
+
+Try to do the same with other fiber implementations to see if they also
+hold out. Performance can always be improved later, but an incorrect application
+is always an incorrect application and its advertised performance is useless.
+
+I invested some serious effort into the design and implementation of cleanup
+handlers to preserve program invariants. Emilua is designed for robustness
+first, correctness above performance (honestly if I was worried about
+performance, I'd be coding in C, not Lua).
+
+If you find any crash on the execution engine, please report it and I'll take
+the issue seriously (feature requests on the other hand may not receive my
+attention in a timely manner).
+====
