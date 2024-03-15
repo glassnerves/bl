@@ -23,7 +23,7 @@
 +--------------+
 ....
 
-[syntrax,svg]
+[syntrax,hyperlinked,svg,opts=interactive]
 ....
 jsyntrax(stack(
  line('attribute', '/(attribute) identifier', 'of'),
@@ -37,7 +37,8 @@ jsyntrax(stack(
 ....
 
 [vega, tasd, svg]
-----{
+....
+{
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
    "title": "Body Mass of Penguin Species (g)",
   "data": {
@@ -101,11 +102,18 @@ jsyntrax(stack(
 }
 ----
 
-[bytefield]
+[bytefield, lel, svg]
 ----
+....
 (draw-column-headers)
 (draw-box 0x0f)
 ...
+----
+
+[bytefield, lel3, svg]
+----
+(draw-column-headers)
+(draw-box 0x0f
 ----
 
 The execution engine will not crash. The only thing that will happen is a normal
