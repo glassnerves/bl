@@ -102,18 +102,10 @@ jsyntrax(stack(
 }
 ----
 
-[bytefield, lel, svg]
+[bytefield, lel3]
 ----
-....
 (draw-column-headers)
 (draw-box 0x0f)
-...
-----
-
-[bytefield, lel3, svg]
-----
-(draw-column-headers)
-(draw-box 0x0f
 ----
 
 The execution engine will not crash. The only thing that will happen is a normal
@@ -131,4 +123,11 @@ performance, I'd be coding in C, not Lua).
 If you find any crash on the execution engine, please report it and I'll take
 the issue seriously (feature requests on the other hand may not receive my
 attention in a timely manner).
-====
+
+[bytefield, lel, svg]
+----
+....
+(draw-column-headers)
+(draw-box 0x0f)
+...
+----
