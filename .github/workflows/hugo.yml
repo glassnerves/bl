@@ -31,7 +31,7 @@ jobs:
            git config --global core.autocrlf false
       - uses: actions/checkout@v2
       - name: Install deps
-        run:  choco install wget unzip ruby openjdk nodejs.install && gem install asciidoctor --no-document -v 2.0.20 && gem install --no-document rouge asciidoctor-diagram asciidoctor-plantuml && npm install -g vega-cli bytefield-svg && npm list -g vega-cli
+        run:  choco install wget unzip ruby openjdk nodejs.install && gem install asciidoctor --no-document -v 2.0.20 && gem install --no-document rouge asciidoctor-diagram asciidoctor-plantuml && npm install -g vega-lite bytefield-svg
       - name: clone
         shell: pwsh
         run: |
