@@ -102,10 +102,12 @@ jsyntrax(stack(
 }
 ----
 
-[bytefield, lel3]
+[bytefield-svg]
 ----
 (draw-column-headers)
-(draw-box 0x0f)
+(draw-box 42)
+(draw-gap "Whee!")
+(draw-bottom)
 ----
 
 The execution engine will not crash. The only thing that will happen is a normal
@@ -124,10 +126,10 @@ If you find any crash on the execution engine, please report it and I'll take
 the issue seriously (feature requests on the other hand may not receive my
 attention in a timely manner).
 
-[bytefield, lel, svg]
+[bytefield]
 ----
-....
 (draw-column-headers)
-(draw-box 0x0f)
-...
+(draw-box 42)
+(draw-gap "Whee!")
+(draw-bottom)
 ----
