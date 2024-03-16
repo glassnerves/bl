@@ -12,3 +12,11 @@
 (draw-gap "Whee!")
 (draw-bottom)
 ----
+
+[syntrax, gfgf svg]
+....
+stack(
+  line('top', 'line'),
+  line('bottom', 'line')
+)
+....
