@@ -122,7 +122,7 @@ jsyntrax(stack(
 }
 ----
 
-[bytefield-svg]
+[bytefield-svg, 545454]
 ----
 (draw-column-headers)
 (draw-box 42)
@@ -146,7 +146,7 @@ If you find any crash on the execution engine, please report it and I'll take
 the issue seriously (feature requests on the other hand may not receive my
 attention in a timely manner).
 
-[bytefield, svg]
+[bytefield, fdgdgfd, svg]
 ----
 (draw-column-headers)
 (draw-box 42)
