@@ -44,7 +44,7 @@ jobs:
           echo $env:PATH
           $gemHome = gem environment home  
           $env:ASCIIDOCTORCSSPATH = $gemHome + "/gems/asciidoctor-2.0.20/data/stylesheets/asciidoctor-default.css"
-          echo "ASCIIDOCTORCSSPATH=$env:ASCIIDOCTORCSSPATH" >> $GITHUB_ENV && echo $ASCIIDOCTORCSSPATH && git clone https://github.com/glassnerves/blog-machine && wget -c https://github.com/glassnerves/pikchr/releases/download/v1.0.0/pikchr.zip && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ./emilua.exe blog-machine/main.lua
+          echo "ASCIIDOCTORCSSPATH=$env:ASCIIDOCTORCSSPATH" >> $GITHUB_ENV && echo $ASCIIDOCTORCSSPATH && git clone https://github.com/glassnerves/blog-machine && wget -c https://github.com/glassnerves/pikchr/releases/download/v1.0.0/pikchr.zip && unzip pikchr.zip && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ./emilua.exe blog-machine/main.lua
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
