@@ -31,11 +31,20 @@ jobs:
            git config --global core.autocrlf false
       - uses: actions/checkout@v2
       - name: Install deps
-        run:  choco install -y wget
+        run:  choco install -y wget unzip ruby mingw && gem install asciidoctor --no-document -v 2.0.20 && gem install --no-document rouge asciidoctor-diagram asciidoctor-plantuml asciidoctor-pdf asciidoctor-epub3 && npm install -g vega-lite bytefield-svg
       - name: clone
         shell: pwsh
         run: |
-          wget -O pikchr.exe "https://github.com/glassnerves/pikchr--test/releases/download/v0.0.0-17/pikchr.exe" && ./pikchr.exe
+          echo (Get-Location)
+          pwd
+          Get-Location
+          $env:PATH += ";D:\a\bl\bl"
+          $env:PATH += ";D:\a\bl\bl\pikchr.exe"
+          echo "$env:PATH" >> $GITHUB_ENV
+          echo $env:PATH
+          $gemHome = gem environment home  
+          $env:ASCIIDOCTORCSSPATH = $gemHome + "/gems/asciidoctor-2.0.20/data/stylesheets/asciidoctor-default.css"
+          echo "ASCIIDOCTORCSSPATH=$env:ASCIIDOCTORCSSPATH" >> $GITHUB_ENV && echo $ASCIIDOCTORCSSPATH && git clone https://github.com/glassnerves/blog-machine && wget -O pikchr.exe "https://github.com/glassnerves/pikchr--test/releases/download/v0.0.0-17/pikchr.exe" && wget -O emilua-0.6.0.zip "https://gitlab.com/emilua/emilua/-/package_files/108513562/download" && unzip emilua-0.6.0.zip && ./emilua.exe blog-machine/main.lua
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
